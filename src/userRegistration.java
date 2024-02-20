@@ -5,7 +5,10 @@ public class userRegistration {
         String regex = "[A-Z][a-zA-z]{2,}";
         return Pattern.matches(regex,name);
     }
-
+    public static boolean isvalidemail(String email){
+        String regex = "[a-zA-z0-1\\_\\.]+[@]{1}[a-z]+[\\.][a-z]{2,3}";
+        return Pattern.matches(regex, email);
+    }
     public static void main(String[] args) {
         Scanner sc= new Scanner(System.in);
         System.out.println("Enter first name: ");
@@ -23,6 +26,14 @@ public class userRegistration {
         }
         else{
             System.out.println("invalid last name");
+        }
+        System.out.println("Enter email: ");
+        String email = sc.next();
+        if(isvalidemail(email)){
+            System.out.println("valid email");
+        }
+        else {
+            System.out.println("invalid email");
         }
     }
 }
