@@ -14,7 +14,8 @@ public class userRegistration {
         return Pattern.matches(regex, phone);
     }
     public static boolean isvalidpassword(String password){
-        String regex = "[A-Z]+[a-zA-z0-9]{7,}";
+        String regex = "[A-Z]+[0-9]+[a-zA-z0-9].{4,}";
+
         return Pattern.matches(regex, password);
     }
     public static void main(String[] args) {
@@ -53,7 +54,7 @@ public class userRegistration {
             System.out.println("invalid phone");
         }
         System.out.println("Enter password: ");
-        String password = sc.next();
+        String password = sc.nextLine();
         if(isvalidpassword(password)){
             System.out.println("valid password");
         }
