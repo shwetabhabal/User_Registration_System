@@ -6,15 +6,15 @@ public class userRegistration {
         return Pattern.matches(regex,name);
     }
     public static boolean isvalidemail(String email){
-        String regex = "[a-zA-z0-1\\_\\.]+[@]{1}[a-z]+[\\.][a-z]{2,3}";
+        String regex = "[a-zA-z0-1_.]+@[a-z]+[.][a-z]{2,3}";
         return Pattern.matches(regex, email);
     }
     public static boolean isvalidphone(String phone){
-        String regex = "[9][1][ ][0-9]{10}";
+        String regex = "[9][1][0-9]{10}";
         return Pattern.matches(regex, phone);
     }
     public static boolean isvalidpassword(String password){
-        String regex = "[a-zA-z0-9]{8,}";
+        String regex = "[A-Z]+[a-zA-z0-9]{7,}";
         return Pattern.matches(regex, password);
     }
     public static void main(String[] args) {
@@ -43,14 +43,14 @@ public class userRegistration {
         else {
             System.out.println("invalid email");
         }
+
         System.out.println("Enter phone no.");
-        String phone= sc.nextLine();
-        System.out.println(isvalidphone(phone));
+        String phone= sc.next();
         if(isvalidphone(phone)){
             System.out.println("valid phone");
         }
         else{
-            System.out.println("invalid email");
+            System.out.println("invalid phone");
         }
         System.out.println("Enter password: ");
         String password = sc.next();
